@@ -1,0 +1,47 @@
+A Quick Review Guide at the bottom of every report tells you exactly
+what to look for in each section.
+
+---
+
+## How to Use
+
+1. Download `pc-security-audit.bat` or copy the raw text into Notepad.
+2. Save with the `.bat` extension — not `.bat.txt`.
+3. Right-click > **Run as administrator**.
+4. Open the report from your Desktop when finished.
+5. Ctrl+F any `SECTION` number to jump straight to it.
+
+---
+
+## Quick Reference — What the Findings Mean
+
+| Finding | What It Means |
+|---|---|
+| Firewall OFF on any profile | Machine is exposed — enable immediately |
+| Unknown port LISTENING | Could be malware or an unneeded service |
+| Unknown account in Administrators | Potential unauthorized access |
+| Password never expires | Security policy gap |
+| Defender signatures older than 3 days | Not fully protected |
+| Unknown registry Run key | Investigate before removing |
+| RDP enabled unexpectedly | Attack surface — disable if not needed |
+| 10+ failed logins same account | Brute force attempt in progress |
+
+---
+
+## Related Repos
+
+- [repair-toolkit](https://github.com/Costa-tintin/repair-toolkit) —
+  system file repair, network reset, disk health checks
+- [root-cause](https://github.com/Costa-tintin/root-cause) —
+  documented IT issues and verified fixes across all device categories
+
+---
+
+## Notes
+
+- Requires Administrator rights — right-click and Run as administrator.
+- Section 10 reads the Security Event Log — only populated if Windows
+  auditing is enabled (it is by default on most machines).
+- RDP check: a value of `0` means RDP is **enabled**,
+  `1` means **disabled** — this is the opposite of what you'd expect,
+  so the report labels it clearly.
