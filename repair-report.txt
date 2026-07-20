@@ -1,0 +1,48 @@
+Open it in Notepad. Each section is clearly labelled so you can jump straight
+to the part that matters (e.g. search `SECTION 9` for recent error events,
+or `SECTION 4` for network diagnostics).
+
+---
+
+## How to Use
+
+1. Download `repair-toolkit.bat` from this repo (or copy the raw text into
+   Notepad).
+2. Save the file with the `.bat` extension — **not** `.bat.txt`.
+3. Right-click the file and select **Run as administrator**.
+4. Wait for all 10 steps to finish (DISM can take several minutes on the
+   first run).
+5. When done, open the report file from your Desktop.
+
+> **Note:** `chkdsk` and `DISM` require Administrator rights. The script will
+> not work correctly without them.
+
+---
+
+## When to Run This
+
+- A user reports their PC is slow, crashing, or showing errors
+- After a malware removal to verify system file integrity
+- Before handing a repaired machine back to a user
+- Any time you need a full baseline snapshot of a machine's state
+
+---
+
+## Report Sections Quick Reference
+
+| Search for in the .txt | What you find |
+|---|---|
+| `SECTION 1` | System specs, OS version, RAM, uptime |
+| `SECTION 2` | SFC result — any corrupted files found |
+| `SECTION 3` | DISM result — whether the Windows image needed repair |
+| `SECTION 4` | Full IP config, DNS, ping results, open connections |
+| `SECTION 5` | Network reset confirmation |
+| `SECTION 6` | Disk errors, disk list |
+| `SECTION 7` | What runs at startup |
+| `SECTION 8` | All running processes at time of scan |
+| `SECTION 9` | Last 50 System errors + last 25 Application errors |
+| `SECTION 10` | Every installed program, version, install date |
+
+---
+
+## Repo Structure
